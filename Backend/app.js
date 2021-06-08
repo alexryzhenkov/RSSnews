@@ -21,36 +21,11 @@ async function startdb(){
 }
 
 
-app.get("/getFirstPosts", (req, res) =>{
-    console.log("First posts")
-    res.status(200).json({
-        status: "success",
-        data: [{
-                feed: "Name of feed",
-                date: "Post date",
-                content: "news message"
-            },
-            {
-                feed: "Name of feed",
-                date: "Post date",
-                content: "news message"
-            }]
-    })
-})
+app.use('/',require('./routes/index'));
 
-app.get("/refreshAnalysis", (req, res) =>{
-    console.log("First posts")
-    res.status(200).json({
-        status: "success",
-    })
-})
+app.get("/refreshAnalysis",require('./routes/index'));
 
-app.post("/addFeed", (req, res) =>{
-    console.log(req.body)
-    res.status(200).json({
-        status: "success"
-    })
-})
+app.post("/addFeed",require('./routes/index'));
 
 
 
