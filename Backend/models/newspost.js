@@ -1,10 +1,10 @@
 const mongoose = require("mongoose")
 
 const newspostSchema= mongoose.Schema({
-    _id: mongoose.Types.ObjectId,
+    _id: mongoose.Schema.Types.ObjectId,
     source: String,
     content: String,
-    date: mongoose.Types.date
+    date: String
 
 },
 { collection : 'firstPposts' })

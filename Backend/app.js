@@ -6,6 +6,8 @@ const app = express()
 
 const db = require('./config/keys').MongoURI
 
+const feed = require('./models/feed')
+
 PORT=5000
 
 
@@ -15,6 +17,8 @@ app.use(express.json())
 async function startdb(){
     try{
         await mongoose.connect(db,{useNewUrlParser: true})
+        app.listen(PORT, () => console.log("App is running"))
+        console.log('DB running')
     }catch (e){
         console.log('Server error ', e.message)
     }
@@ -29,4 +33,4 @@ app.post("/addFeed",require('./routes/index'));
 
 
 
-app.listen(PORT, () => console.log("App is running"))
+startdb()

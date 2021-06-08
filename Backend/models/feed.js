@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const feedSchema= mongoose.Schema({
-    _id: mongoose.Types.ObjectId,
+    _id: mongoose.Schema.Types.ObjectId,
     name: String,
     link: String
 
