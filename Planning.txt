@@ -1,0 +1,16 @@
+RSS reader project.
+
+General idea: Python is used for analysing RSS feed stream.
+              Python stores RSSFeed in Mongo or SQL
+              Express+React for showing results and controlling analytics.
+
+Making project: MVP Based idea. After some point move everything to docker.
+
+Iteration 1.
+    Database which stores RSS feed adresses.
+    Python script takes adresses -> read first post from each feed -> stores it to the DB.
+    Web app: 
+            Show first post from each feed to user.
+            Add new RSS feeds.
+            Refresh python script.
+
