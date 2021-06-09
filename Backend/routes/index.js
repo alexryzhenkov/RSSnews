@@ -25,7 +25,7 @@ router.get("/getFirstPosts", (req, res) =>{
 
 router.get("/refreshAnalysis", (req, res) =>{
     console.log("Refresh")
-    const python =spawn('python',['/home/alex/Documents/programming/Projects/RSSnews/RSSnews/Analytics/scripts/test.py'])
+    const python =spawn('python',['/home/alex/Documents/programming/Projects/RSSnews/RSSnews/Analytics/scripts/refreshFirstPosts.py'])
 
     var dataToSend="Fail" 
 

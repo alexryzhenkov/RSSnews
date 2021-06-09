@@ -8,6 +8,6 @@ const newspostSchema= mongoose.Schema({
     link: String,
     date: String
 },
-{ collection : 'firstPposts' })
+{ collection : 'firstPosts' })
 
 module.exports = mongoose.model('Newspost', newspostSchema)
