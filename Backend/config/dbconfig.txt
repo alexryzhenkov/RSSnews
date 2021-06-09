@@ -1,0 +1,3 @@
+use RSSFeedDB
+db.createCollection("feeds", {autoIndexId : true})
+db.createCollection("firstPosts", {autoIndexId : true})
