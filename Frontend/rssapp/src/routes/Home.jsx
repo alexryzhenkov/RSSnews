@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
 import SubMenu from "../components/SubMenu"
 const Home = () => {
     return <div>
-       < Header />
-       < SubMenu />
+       <Sidebar></Sidebar>
     </div>;
 };
 
