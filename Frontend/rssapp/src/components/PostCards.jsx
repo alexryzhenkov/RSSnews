@@ -24,6 +24,26 @@ const PostCards = (props) => {
 
 
 
+    const sayHello =  () => {
+        const updatefeed = async () =>{
+            try{
+                const answer = await LastPostsApi.get("/refreshAnalysis")
+                const responce = await LastPostsApi.get("/getFirstPosts")
+                console.log(responce)
+                setPosts(responce.data.data)
+                console.log(posts)
+                
+            }
+            catch (err){
+    
+            }
+        }
+        updatefeed()
+      }
+
+
+
+
 
     return <div>
 
@@ -31,8 +51,21 @@ const PostCards = (props) => {
         <div class="container-fluid">
 
 
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="d-sm-flexjustify-content-between mb-4">
+        <div class="row">
+
+        <div class="col-lg-2">
             <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+        </div>
+        <div class="col-lg-2">
+        <a href="#" onClick={sayHello} class="btn btn-info btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-flag"></i>
+                                        </span>
+                                        <span class="text">Refresh</span>
+                                    </a>
+        </div>
+        </div>
 
         
         </div>
