@@ -42,8 +42,7 @@ const FeedConsole = () => {
     </div>
     
     </div>
-    </div>
-    </div>
+
     
     <table class="table table-hover">
     <thead>
@@ -67,7 +66,50 @@ const FeedConsole = () => {
     })}
     </tbody>
   </table>
+
+  <div class="row">
+
+<div class="col-lg-4">
+
+
+  <form>
+  <fieldset>
+    <legend>Add new feed</legend>
+
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Feed</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" placeholder="Iltalehti"/>
+      </div>
+
+      <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="description"  placeholder="Finnish junk media"/>
+      </div>
+
+      <label for="staticEmail" class="col-sm-2 col-form-label">Link</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" id="link"  placeholder="https://www.iltalehti.fi/rss/uutiset.xml"/>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
   </div>
+
+
+ 
+
 };
 
 export default FeedConsole;
