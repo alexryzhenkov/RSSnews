@@ -1,7 +1,30 @@
 
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
+import LastPostsApi from "../apis/LastPostsApi"
+import { LastPostsContext } from '../context/LastPostsContext';
 
-const PostCards = () => {
+const PostCards = (props) => {
+    const {posts, setPosts}=useContext(LastPostsContext)
+    useEffect( () => {
+
+        const fetchdata = async () =>{
+        try{
+            const responce = await LastPostsApi.get("/getFirstPosts")
+            console.log(responce)
+            setPosts(responce.data.data)
+            console.log(posts)
+            
+        }
+        catch (err){
+
+        }
+    }
+    fetchdata()
+    },[])
+
+
+
+
     return <div>
 
 
@@ -16,52 +39,24 @@ const PostCards = () => {
 
 <div class="row">
 
-<div class="col-lg-6">
+<div class="col-lg-4">
 
-
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+    {posts.map(post =>{
+        return(
+            <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{post.title}</h6>
+                <p class="m-0">{post.source}</p>
+            </div>
+            <div class="card-body">
+                {post.summary}
+            </div>
+            <div class="card-footer text-muted">
+                {post.date}
+            </div>
         </div>
-        <div class="card-body">
-            The styling for this basic card example is created by using default Bootstrap
-            utility classes. By using utility classes, the style of the card component can be
-            easily modified with no need for any custom CSS!
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
-        </div>
-    </div>
-
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-        </div>
-        <div class="card-body">
-            The styling for this basic card example is created by using default Bootstrap
-            utility classes. By using utility classes, the style of the card component can be
-            easily modified with no need for any custom CSS!
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
-        </div>
-    </div>
-
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-        </div>
-        <div class="card-body">
-            The styling for this basic card example is created by using default Bootstrap
-            utility classes. By using utility classes, the style of the card component can be
-            easily modified with no need for any custom CSS!
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
-        </div>
-    </div>
-
-    
+        )
+    })}
 
 </div>
 </div>

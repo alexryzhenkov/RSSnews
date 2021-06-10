@@ -1,14 +1,14 @@
 import React, {useState, createContext} from "react"
 
-export const LastPostContext = createContext();
+export const LastPostsContext = createContext();
 
-export const LastPostContextprovider = props => {
+export const LastPostsContextprovider = props => {
     const [posts, setPosts] = useState([])
 
     return(
-        <LastPostContext.Provider value={{posts, setPosts}}>
+        <LastPostsContext.Provider value={{posts, setPosts}}>
             {props.children}
-        </LastPostContext.Provider>
+        </LastPostsContext.Provider>
     )
 } 
 
